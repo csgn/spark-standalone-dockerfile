@@ -11,8 +11,6 @@ ENV SBT_HOME=/opt/sbt
 ENV TARGET_JAR=/app/target/scala-2.12/${JOB_NAME}_2.12-0.0.1.jar
 
 RUN apk --update add wget tar bash
-WORKDIR /spark-workdir
-COPY spark.tgz .
 
 RUN export SPARK_TMP="$(mktemp -d)"; \
     cd ${SPARK_TMP}; \
