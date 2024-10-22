@@ -33,4 +33,4 @@ COPY . .
 
 RUN sbt clean package
 
-CMD [ "spark-submit", "--packages", "org.apache.spark:spark-sql-kafka-0-10_${SCALA_VERSION}:${SPARK_VERSION}", "--deploy-mode", "client", "${TARGET_JAR}" ]
+CMD ["sh", "-c", "spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_${SCALA_VERSION}:${SPARK_VERSION} --deploy-mode client ${TARGET_JAR}"]
